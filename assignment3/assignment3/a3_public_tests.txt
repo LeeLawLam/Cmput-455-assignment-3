@@ -1,0 +1,160 @@
+# one-pattern, example 1 from the assignment instructions
+init_game 5 5 0.5 0
+= 1
+
+timelimit 2
+= 1
+
+load_patterns onepattern.txt
+= 1
+
+play 0 2
+= 1
+
+play 0 0
+= 1
+
+play 2 0
+= 1
+
+play 4 0
+= 1
+
+play 4 2
+= 1
+
+play 0 4
+= 1
+
+play 2 4
+= 1
+
+play 4 4
+= 1
+
+show
+2 _ 1 _ 2
+_ _ _ _ _
+1 _ _ _ 1
+_ _ _ _ _
+2 _ 1 _ 2
+= 1
+
+?position_evaluation
+20.4
+= 1
+
+# two-pattern, example 2 from the assignment instructions
+init_game 7 8 0.5 0 ______2/1____22/_1__22_/_____2_/_______/__11___/_____1_/11_____
+= 1
+
+timelimit 2
+= 1
+
+show
+_ _ _ _ _ _ 2
+1 _ _ _ _ 2 2
+_ 1 _ _ 2 2 _
+_ _ _ _ _ 2 _
+_ _ _ _ _ _ _
+_ _ 1 1 _ _ _
+_ _ _ _ _ 1 _
+1 1 _ _ _ _ _
+= 1
+
+?load_patterns twopattern1.txt
+= 1
+
+?position_evaluation
+-7.0
+= 1
+
+# two-pattern, example 3 from the assignment instructions
+init_game 4 2 0.5 0 1121/2___
+= 1
+
+timelimit 2
+= 1
+
+show
+1 1 2 1
+2 _ _ _
+= 1
+
+?load_patterns twopattern2.txt
+= 1
+
+?position_evaluation
+4.2
+= 1
+
+# two-pattern, example 4 from the assignment
+init_game 3 3 0.5 0 1__/___/21_
+= 1
+
+timelimit 2
+= 1
+
+show
+1 _ _
+_ _ _
+2 1 _
+= 1
+
+?load_patterns twopattern3.txt
+= 1
+
+?move_evaluation
+-2.2 0 -4.4 15.6 17.8 0
+= 1
+
+?policy_moves
+0.054 0.091 0.017 0.355 0.392 0.091
+= 1
+
+# a case for timeout being inherent?
+
+init_game 1000 1000 0.5 0 
+= 1
+
+timelimit 5
+= 1
+
+?load_patterns randompattern.txt
+= 1
+
+?position_evaluation
+= -1
+
+?policy_moves
+= -1
+
+# A subsuming test
+
+init_game 4 1 0.5 0 1121
+= 1
+
+timelimit 2
+= 1
+
+?load_patterns subsumepattern.txt
+= 1
+
+?position_evaluation
+4.2
+= 1
+
+# A test that you pick the higher score when multiple match
+
+init_game 4 1 0.5 0 2121
+= 1
+
+timelimit 2
+= 1
+
+?load_patterns higherscorepattern.txt
+= 1
+
+?position_evaluation
+40.0
+= 1
